@@ -24,7 +24,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     Optional<Employee> findByEmail(String email);
 
     @Query("SELECT new com.mandm.harmony_hr.dto.EmployeeEmailDto(e.empId, e.firstName, e.lastName, e.email) FROM Employee e")
-    List<EmployeeEmailDto> findAllEmployeeEmails();
+    List<EmployeeEmailDto> findAllHiringManagerEmployeeEmails();
 
     @Query("SELECT u.belongsTo FROM Users u WHERE u.userId = :userId")
     Optional<Employee> findEmployeeByUserId(@Param("userId") Integer userId);

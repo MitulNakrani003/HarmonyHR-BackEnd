@@ -16,7 +16,7 @@ public class EmployeeService {
     private final UsersRepository usersRepository;
 
     public EmployeeService(EmployeeRepository employeeRepository,
-                           UsersRepository usersRepository) {
+                            UsersRepository usersRepository) {
         this.employeeRepository = employeeRepository;
         this.usersRepository = usersRepository;
     }
@@ -36,7 +36,7 @@ public class EmployeeService {
         return user.getBelongsTo();
     }
 
-    public List<EmployeeEmailDto> getAllEmployeeNamesAndEmails() {
-        return employeeRepository.findAllEmployeeEmails();
+    public List<EmployeeEmailDto> getAllHiringManagerEmployeeEmails() {
+        return employeeRepository.findAllHiringManagerEmployeeEmails();
     }
 }
